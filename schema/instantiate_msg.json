@@ -1,0 +1,343 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InstantiateMsg",
+  "type": "object",
+  "required": [
+    "decimals",
+    "initial_balances",
+    "max_curve_complexity",
+    "name",
+    "symbol"
+  ],
+  "properties": {
+    "allowed_vesters": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "decimals": {
+      "type": "integer",
+      "format": "uint8",
+      "minimum": 0.0
+    },
+    "initial_balances": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/InitBalance"
+      }
+    },
+    "marketing": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/InstantiateMarketingInfo"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "max_curve_complexity": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "mint": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinterInfo"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "Binary": {
+      "description": "Binary is a wrapper around Vec<u8> to add base64 de/serialization with serde. It also adds some helper methods to help encode inline.\n\nThis is only needed as serde-json-{core,wasm} has a horrible encoding for Vec<u8>. See also <https://github.com/CosmWasm/cosmwasm/blob/main/docs/MESSAGE_TYPES.md>.",
+      "type": "string"
+    },
+    "Curve": {
+      "description": "Curve types",
+      "oneOf": [
+        {
+          "description": "Constan curve, it will always have the same value",
+          "type": "object",
+          "required": [
+            "constant"
+          ],
+          "properties": {
+            "constant": {
+              "type": "object",
+              "required": [
+                "y"
+              ],
+              "properties": {
+                "y": {
+                  "description": "Contanst value y",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Uint128"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Linear curve that grow linearly but later tends to a constant saturated value.",
+          "type": "object",
+          "required": [
+            "saturating_linear"
+          ],
+          "properties": {
+            "saturating_linear": {
+              "$ref": "#/definitions/SaturatingLinear"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Curve with different slopes",
+          "type": "object",
+          "required": [
+            "piecewise_linear"
+          ],
+          "properties": {
+            "piecewise_linear": {
+              "$ref": "#/definitions/PiecewiseLinear"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "EmbeddedLogo": {
+      "description": "This is used to store the logo on the blockchain in an accepted format. Enforce maximum size of 5KB on all variants.",
+      "oneOf": [
+        {
+          "description": "Store the Logo as an SVG file. The content must conform to the spec at https://en.wikipedia.org/wiki/Scalable_Vector_Graphics (The contract should do some light-weight sanity-check validation)",
+          "type": "object",
+          "required": [
+            "svg"
+          ],
+          "properties": {
+            "svg": {
+              "$ref": "#/definitions/Binary"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Store the Logo as a PNG file. This will likely only support up to 64x64 or so within the 5KB limit.",
+          "type": "object",
+          "required": [
+            "png"
+          ],
+          "properties": {
+            "png": {
+              "$ref": "#/definitions/Binary"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "InitBalance": {
+      "type": "object",
+      "required": [
+        "address",
+        "amount"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/definitions/Uint128"
+        },
+        "vesting": {
+          "description": "Optional vesting schedule It must be a decreasing curve, ending at 0, and never exceeding amount",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Curve"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "InstantiateMarketingInfo": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "logo": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Logo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "marketing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Logo": {
+      "description": "This is used for uploading logo data, or setting it in InstantiateData",
+      "oneOf": [
+        {
+          "description": "A reference to an externally hosted logo. Must be a valid HTTP or HTTPS URL.",
+          "type": "object",
+          "required": [
+            "url"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Logo content stored on the blockchain. Enforce maximum size of 5KB on all variants",
+          "type": "object",
+          "required": [
+            "embedded"
+          ],
+          "properties": {
+            "embedded": {
+              "$ref": "#/definitions/EmbeddedLogo"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MinterInfo": {
+      "type": "object",
+      "required": [
+        "minter"
+      ],
+      "properties": {
+        "cap": {
+          "description": "cap is a hard cap on total supply that can be achieved by minting. This can be a monotonically increasing curve based on block time (constant value being a special case of this).\n\nNote that cap refers to total_supply. If None, there is unlimited cap.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Curve"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "minter": {
+          "type": "string"
+        }
+      }
+    },
+    "PiecewiseLinear": {
+      "description": "This is a generalization of SaturatingLinear, steps must be arranged with increasing time [`u64`]. Any point before first step gets the first value, after last step the last value. Otherwise, it is a linear interpolation between the two closest points. Vec of length 1 -> [`Constant`](Curve::Constant) . Vec of length 2 -> [`SaturatingLinear`] .",
+      "type": "object",
+      "required": [
+        "steps"
+      ],
+      "properties": {
+        "steps": {
+          "description": "steps",
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": [
+              {
+                "type": "integer",
+                "format": "uint64",
+                "minimum": 0.0
+              },
+              {
+                "$ref": "#/definitions/Uint128"
+              }
+            ],
+            "maxItems": 2,
+            "minItems": 2
+          }
+        }
+      }
+    },
+    "SaturatingLinear": {
+      "description": "Saturating Linear $$f(x)=\\begin{cases} [min(y) * amount],  & \\text{if x <= $x_1$ } \\\\\\\\ [y * amount],  & \\text{if $x_1$ >= x <= $x_2$ } \\\\\\\\ [max(y) * amount],  & \\text{if x >= $x_2$ } \\end{cases}$$\n\nmin_y for all x <= min_x, max_y for all x >= max_x, linear in between",
+      "type": "object",
+      "required": [
+        "max_x",
+        "max_y",
+        "min_x",
+        "min_y"
+      ],
+      "properties": {
+        "max_x": {
+          "description": "time when curve has fully saturated",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "max_y": {
+          "description": "max value at saturated time",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Uint128"
+            }
+          ]
+        },
+        "min_x": {
+          "description": "time when curve start",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "min_y": {
+          "description": "min value at start time",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Uint128"
+            }
+          ]
+        }
+      }
+    },
+    "Uint128": {
+      "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+      "type": "string"
+    }
+  }
+}

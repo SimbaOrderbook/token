@@ -1,0 +1,19 @@
+[package]
+name = "wynd-utils"
+version    = "1.7.0"
+authors = ["Cosmorama <cosmorama@proton.me>"]
+license    = "Apache-2.0"
+description = "Utility functions used by multiple Wynd contracts"
+edition    = "2021"
+
+[dependencies]
+cosmwasm-std            = "1.1"
+schemars                = "0.8"
+serde                   = { version = "1", default-features = false, features = ["derive"] }
+thiserror               = "1"
+
+[dev-dependencies]
+cw-multi-test           = "0.16"
+cw-storage-plus         = "0.16"
+prost = "0.9"
+test-case               = "2"

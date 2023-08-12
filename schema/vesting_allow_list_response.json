@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VestingAllowListResponse",
+  "type": "object",
+  "required": [
+    "allow_list"
+  ],
+  "properties": {
+    "allow_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

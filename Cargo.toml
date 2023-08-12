@@ -1,0 +1,33 @@
+[package]
+name = "cw20-vesting"
+version    = "1.7.0"
+authors = ["Cosmorama <cosmorama@proton.me>"]
+license    = "Apache-2.0"
+description = "Extend cw20-base to add vesting times to tokens"
+edition    = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+backtraces = ["cosmwasm-std/backtraces"]
+# use library feature to disable all instantiate/execute/query exports
+library = []
+
+[dependencies]
+cosmwasm-std            = "1.1"
+cw-storage-plus         = "0.16"
+cw-utils                = "0.16"
+cw2                     = "0.16"
+cw20                    = "0.16"
+schemars                = "0.8"
+serde                   = { version = "1", default-features = false, features = ["derive"] }
+thiserror               = "1"
+wynd-utils              = { version = "1.7", path = "./packages/utils" }
+
+[dev-dependencies]
+anyhow                  = "1"
+cosmwasm-schema         = "1.1"
+cw-multi-test           = "0.16"
+cw20-vesting-1_1_0 = { package = "cw20-vesting", git = "https://github.com/cosmorama/wynddao", version = "1.1.0" }
+wynd_utils-1_1_0 = { package = "wynd-utils", git = "https://github.com/cosmorama/wynddao", version = "1.1.0" }
