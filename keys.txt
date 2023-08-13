@@ -1,0 +1,148 @@
+Script started on Sun Aug 13 12:54:27 2023
+Restored session: Sun Aug 13 12:52:20 IST 2023
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                            ]7;file://Sais-MBP/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;OSCUnlock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;Dir=/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;Shell=zsh]697;ShellPath=/bin/zsh]697;PID=29159]697;ExitCode=0]697;TTY=/dev/ttys014]697;Log=]697;ZshAutosuggestionColor=]697;FigAutosuggestionColor=]697;User=sai[0m[27m[24m[J]697;StartPrompt(base) sai@Sais-MBP cw20-vesting % ]697;EndPrompt]697;NewCmd=b8a0087e-d48c-4377-bbfe-0ba210e6b883[K[168C]697;StartPrompt]697;EndPrompt[168D[?2004hbbash keys.sh[1m [0m[0m [?2004l
+]697;OSCLock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;PreExecoverride the existing name admin [y/N]: y
+
+- name: admin
+  type: local
+  address: sei14tmmguzwcqz4zuuz9rapxv7508pd3ecwmw5j6s
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AuuCD5Y6rtSuCHACvkRL7PTRlG18S898mI6GkqfoT+Kr"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+frame fancy tribe devote goddess weekend green blur treat bean negative angle cruel athlete file blush prison flight code flame parent crime jacket false
+override the existing name public-sale [y/N]: y
+
+- name: public-sale
+  type: local
+  address: sei1r23gyav7gt64dqzwtrr0l0fr2drx3cyan5upuk
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AlRPkGBWw2Nm32rNEq81WDQwFy8V27pZ++XK/2/pTOs+"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+trim dove cave wise identify liberty right one unfold wreck index antenna total baby element spend seek dash jelly size eight second burst cup
+override the existing name kol [y/N]: 
+Error: aborted
+Usage:
+  seid keys add <name> [flags]
+
+Flags:
+      --account uint32           Account number for HD derivation
+      --algo string              Key signing algorithm to generate keys for (default "secp256k1")
+      --coin-type uint32         coin type number for HD derivation (default 118)
+      --dry-run                  Perform action, but don't add key to local keystore
+      --hd-path string           Manual HD Path derivation (overrides BIP44 config)
+  -h, --help                     help for add
+      --index uint32             Address index number for HD derivation
+  -i, --interactive              Interactively prompt user for BIP39 passphrase and mnemonic
+      --ledger                   Store a local reference to a private key on a Ledger device
+      --multisig strings         List of key names stored in keyring to construct a public legacy multisig key
+      --multisig-threshold int   K out of N required signatures. For use in conjunction with --multisig (default 1)
+      --no-backup                Don't print out seed phrase (if others are watching the terminal)
+      --nosort                   Keys passed to --multisig are taken in the order they're supplied
+      --pubkey string            Parse a public key in JSON format and saves key info to <name> file.
+      --recover                  Provide seed phrase to recover existing key instead of creating
+
+Global Flags:
+      --home string              The application home directory (default "/Users/sai/.sei")
+      --keyring-backend string   Select keyring's backend (os|file|test) (default "os")
+      --keyring-dir string       The client Keyring directory; if omitted, the default 'home' directory will be used
+      --log_format string        The logging format (json|plain)
+      --log_level string         The logging level (trace|debug|info|warn|error|fatal|panic)
+      --output string            Output format (text|json) (default "text")
+      --trace                    print out full stack trace on errors
+
+override the existing name liquidity [y/N]: y
+
+- name: liquidity
+  type: local
+  address: sei19ylzzuf5q8y7um26x5cg3anna7gtwdlelg29yf
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A7/4HdwBokJLjV5kA32z1+GQSaJR4Y2VZopLo+tkFbiT"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+snack buddy vault risk ring dignity ginger dial domain famous abuse legend liar snap powder obscure acquire grant river maid engage kingdom erode enrich
+override the existing name team [y/N]: y
+
+- name: team
+  type: local
+  address: sei1ldsjefq0n8aekqs0rxgxvlc4zx4q8apsu5m89x
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AnbVFhI+rXukd5BqeN/3KLoFmUOyHOePPQydiSTvP7UA"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+into suit board suit shrug inner empty raise pair found crawl become action earth meat scorpion bundle close vague keen entry neck taste plate
+override the existing name advisors [y/N]: y
+
+- name: advisors
+  type: local
+  address: sei134nhrs9nl4uuuc0casjjtgnzgthn95pgfv4xwx
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"ArkwXJyr6Ab5eJuCeaQDrd8dP1kNZ5Ejq/bcv98Ll/zY"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+bundle lucky useless august fluid window network include final tornado unable page sword amused oxygen mango figure rule solid among drive spin sail swing
+override the existing name staking [y/N]: y
+
+- name: staking
+  type: local
+  address: sei1cx78yq35p9hgsw2gcmjy7cu645vxj959wmc8dn
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AwQMaSLyxVYucSFzrKnHjqGO9KoZEiiVPsW8cRWCQMZc"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+section firm adjust broccoli dad goose trick reduce minute can nuclear crucial glare hurry fence scene alert service fish giggle island body buzz cloud
+override the existing name marketing [y/N]: y
+
+- name: marketing
+  type: local
+  address: sei1gx23lkgm04kc8uwx5zpxe4z8a5rd5wx2rr9g0f
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A2YI6RQghnmvHpbLCgTUIvfxCbE5p2D3WjYAghaqKsu8"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+manual afraid movie nerve play insect race april virus crucial hollow rug run letter feed crazy bachelor solution worth friend body version begin clock
+override the existing name treasury [y/N]: y
+
+- name: treasury
+  type: local
+  address: sei15yfqefajml8kyhdup99p38ap6pl9pkrew62trq
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AzdoM7Nq8Yt6/0Yt3fSvI8IzzYT4iKe3oG4njnU9PM1J"}'
+  mnemonic: ""
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+bird female energy become search federal rabbit syrup impose usual bind language allow bright immune diary venue ticket trick blur almost shove airport alert
+Keys generated successfully.
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                            ]7;file://Sais-MBP/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;OSCUnlock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;Dir=/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;Shell=zsh]697;ShellPath=/bin/zsh]697;PID=29159]697;ExitCode=0]697;TTY=/dev/ttys014]697;Log=]697;ZshAutosuggestionColor=]697;FigAutosuggestionColor=]697;User=sai[0m[27m[24m[J]697;StartPrompt(base) sai@Sais-MBP cw20-vesting % ]697;EndPrompt]697;NewCmd=b8a0087e-d48c-4377-bbfe-0ba210e6b883[K[168C]697;StartPrompt]697;EndPrompt[168D[?2004hy[?2004l
+]697;OSCLock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;PreExeczsh: command not found: y
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                            ]7;file://Sais-MBP/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;OSCUnlock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;Dir=/Users/sai/go/src/github.com/saiSunkari19/cw20-vesting-simba/cw20-vesting]697;Shell=zsh]697;ShellPath=/bin/zsh]697;PID=29159]697;ExitCode=127]697;TTY=/dev/ttys014]697;Log=]697;ZshAutosuggestionColor=]697;FigAutosuggestionColor=]697;User=sai[0m[27m[24m[J]697;StartPrompt(base) sai@Sais-MBP cw20-vesting % ]697;EndPrompt]697;NewCmd=b8a0087e-d48c-4377-bbfe-0ba210e6b883[K[168C]697;StartPrompt]697;EndPrompt[168D[?2004hy eexit[?2004l
+]697;OSCLock=b8a0087e-d48c-4377-bbfe-0ba210e6b883]697;PreExec
+Saving session...
+...saving history...truncating history files...
+...completed.
+
+Script done on Sun Aug 13 12:54:49 2023
