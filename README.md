@@ -5,84 +5,69 @@ to add native vesting controls to the token, like the cosmos sdk auth/bank modul
 
 ## Structure 
 
-## Before TGE 
-- These are init with Accounts 
-Admin - 
-Public Sale - 5750000 * 10 ** 18
-KOLs - 750,000
-Liquidity - 5,000,000
-Team -
-Advisors - 
-Staking  - 1,250,000
-Marketing - 500,000
-Treasury -
-
-Total Liquidity : 13,250,000
-
 ## Init Account with 
-Admin - sei1zdp33s8uukh5hfugcyvexnq50fq7g078namjjd -  86750000 * 10 ** 18
-Public Sale -  5750000 * 10 ** 18
-KOLs - 750,000
-Liquidity - 5,000,000
-Team - 
-Advisors - 
-Staking  - 1,250,000
-Marketing - 500,000
-Treasury - 
+- Admin - sei1qmnpsuke3x6hmy5jnrrrq7ztgqcmw9r2wm2ms2 -  86750000 * 10 ** 18
+- Public Sale -  5,937,500 * 10 ** 18
+- KOLs - 562,500
+- Liquidity - 5,000,000
+- Team - 0
+- Advisors - 0
+- Staking  - 1,250,000
+- Marketing - 500,000
+- Treasury - 0
 
 
 ## Init Msg 
-```json
+```json=
 
 {
   "decimals": 18,
-  "initial_balances": [
-    {
-      "address": "sei14tmmguzwcqz4zuuz9rapxv7508pd3ecwmw5j6s", 
-      "amount": "86750000000000000000000000" 
+  "initial_balances": [{
+      "address": "sei1qmnpsuke3x6hmy5jnrrrq7ztgqcmw9r2wm2ms2",
+      "amount": "86750000000000000000000000"
     },
     {
-      "address": "sei1r23gyav7gt64dqzwtrr0l0fr2drx3cyan5upuk",
-      "amount": "5750000000000000000000000"
+      "address": "sei1ngfkny8z4tgcfjyvd7mgq5hezfpkhvc38rtsn3",
+      "amount": "5937500000000000000000000"
     },
     {
-      "address": "sei1dgdlq4ferumxnu9xp24xzeqzqtr5vyeltgyp79",
-      "amount": "750000000000000000000000"
+      "address": "sei1x2cs0pq3r39e228mw00nry859wmezdjmlyxpfg",
+      "amount": "562500000000000000000000"
     },
     {
-      "address": "sei19ylzzuf5q8y7um26x5cg3anna7gtwdlelg29yf",
+      "address": "sei1jv9skgvd0wfaqmse32qxq2tu4j7zgdch49ewfm",
       "amount": "5000000000000000000000000"
     },
     {
-      "address": "sei1ldsjefq0n8aekqs0rxgxvlc4zx4q8apsu5m89x",
+      "address": "sei1mdd0lmmldy6taunn5j5y7ryeedzfm5vg7ngcs5",
       "amount": "0"
     },
     {
-      "address": "sei134nhrs9nl4uuuc0casjjtgnzgthn95pgfv4xwx",
+      "address": "sei1ul992f68hj4rtd799h36kaly2tgt3umh7jqctn",
       "amount": "0"
     }, {
-      "address": "sei1cx78yq35p9hgsw2gcmjy7cu645vxj959wmc8dn",
+      "address": "sei1duw6vsz4kexr4aktynj02q0mk2sd8ezkqfv7ep",
       "amount": "1250000000000000000000000"
     },
     {
-      "address": "sei1gx23lkgm04kc8uwx5zpxe4z8a5rd5wx2rr9g0f",
+      "address": "sei12fxags20qc7xh9kng5vcg4kh5vdcm7n34g4k2t",
       "amount": "500000000000000000000000"
     },
     {
-      "address": "sei15yfqefajml8kyhdup99p38ap6pl9pkrew62trq",
+      "address": "sei1slvqywlwakwtve4nzcskeehsq55ulm5umg67fn",
       "amount": "0"
     }
-    
+
   ],
-  "max_curve_complexity": 10,
-  "name": "My Token",
-  "symbol": "TOKEN",
+  "max_curve_complexity": 100,
+  "name": "Simba",
+  "symbol": "SIMBA",
   "marketing": {
     "logo": {
       "url": "https://example.com/logo.svg"
     },
-    "project": "My Project",
-    "description": "This is my token!"
+    "project": "Simba Exchange",
+    "description": "The very first native and fastest order book DEX on Sei Network!"
   }
 }
 ```
